@@ -1,5 +1,5 @@
 <div class="row">
-    <a href="main.php" class="col btn button"><?php echo ucfirst($_SESSION['gatekeeper'][username]);?></a>
+    <a href="tab_stats.php" class="col btn button"><?php echo ucfirst($_SESSION['gatekeeper'][username]);?></a>
 </div>
 <div class="row">
     <a href="" class="col btn button">Play</a>

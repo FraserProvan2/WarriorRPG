@@ -36,7 +36,7 @@ else if ($password == false) {
 else if (password_verify($password, $row['password'])) {
     $session_array          = array('id' => $row['id'], 'username' => $row['username']);
     $_SESSION['gatekeeper'] = $session_array;
-    header('location: main.php');
+    header('location: tab_stats.php');
 }
 
 // If details are incorrect
