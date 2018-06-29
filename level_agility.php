@@ -22,5 +22,5 @@ $new_total_level = $userData[level] + 1;
 $level_total = $conn->prepare("UPDATE users SET level= $new_total_level WHERE id = $current_user");
 $level_total->execute();
 
-//Returns to level up page
+// Returns to stats page
 header('location: tab_stats.php');
