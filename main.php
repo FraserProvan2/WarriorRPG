@@ -1,3 +1,5 @@
+<?php include 'include/db.php'; ?>
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -10,38 +12,44 @@
 
   <body>
     <div class="container">
-       
+
         <h1 class="title">Warrior RPG</h1>
         
         <div class="row">
             <div class="col-md-9 left">
-                    <div id="side-panel"></div>  
+                    <div id="side-panel">
+
+                        <!--Gets users information-->
+                            <?php 
+                            $current_user = $_SESSION['gatekeeper'][id];
+                            $selectUser = $conn->query("SELECT * FROM users WHERE id=$current_user");
+                            $userData = $selectUser->fetch();
+                            ?>
+
+                        <div class="row">
+                            <!--Shows users levels-->
+                            <div class="levels-div col-md-7">    
+                                <h3><?php echo ucfirst($userData[username]); ?></h3> 
+                                <h6>Level: <?php echo $userData[level]; ?></h6>
+                                <h6>Health: <?php echo $userData[health]; ?></h6>
+                                <h6>Attack: <?php echo $userData[attack]; ?></h6>
+                                <h6>Agility: <?php echo $userData[agility]; ?></h6>
+                                <h6>Avaliable levels: <?php echo $userData[unassigned_xp]; ?></h6>
+                            </div>
+                            <div class="col">
+                                image here
+                            </div>                            
+                        
+                        </div>
+                    </div>  
             </div>
 
             <div class="col right">
-                
-                <div class="row">
-                    <button class="col btn button" onclick="load_game()" value="load">Play</button>
-                </div>
-                <div class="row">
-                        <button class="col btn button" onclick="load_stats()" value="load">Stats</button>
-                </div>
-                <div class="row">
-                        <button class="col btn button" onclick="load_leaderboards()" value="load">Leaderboards</button>
-                </div>
-                <div class="row">
-                        <button class="col btn button" onclick="load_guide()" value="load">Guide</button>
-                </div>
-                <div class="row">
-                        <button class="col btn button" onclick="load_guide()" value="load">Sign Out</button>
-                </div>
+                <?php include 'include/nav.php'; ?>
             </div>
 
         </div>   
         
-        <br>
-            
-
     </div>
     <script type='text/javascript' src='scripts/interface.js'></script>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>

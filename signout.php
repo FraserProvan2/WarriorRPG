@@ -8,4 +8,4 @@ session_destroy();
 unset($_SESSION['gatekeeper']);
 
 // Sends user back to homepage
-header('location: index.html');
+header('location: index.php');

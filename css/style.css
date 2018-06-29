@@ -20,4 +20,16 @@
     margin-left: 15px;
     margin-bottom: 2px;
     border-radius: 5px;
+    background-color:pink;
+    color:black;
+}
+
+.button:hover {
+    background-color: aqua;
+    color:black;
+}
+
+.levels-div {
+    text-align: center;
+    padding-top: 5px;
 }

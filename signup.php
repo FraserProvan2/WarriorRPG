@@ -13,7 +13,7 @@ $unassigned_xp = 0;
 $health = 10;
 $attack = 1;
 $agility = 1;
-$spent_xp = 0;
+$level = 1;
 
 // Used later to check if user exists
 $check_username = $conn->prepare("SELECT * FROM users WHERE username = ?");
@@ -68,14 +68,14 @@ else {
     $hashed_pass = password_hash($password, PASSWORD_DEFAULT);
 
     // Query to insert new user
-    $statement = $conn->prepare("INSERT INTO users (username, password, unassigned_xp, health, attack, agility, spent_xp) VALUES (?, ?, ?, ?, ?, ?, ?)");
+    $statement = $conn->prepare("INSERT INTO users (username, password, unassigned_xp, health, attack, agility, level) VALUES (?, ?, ?, ?, ?, ?, ?)");
     $statement->bindParam(1, $username);
     $statement->bindParam(2, $hashed_pass);
     $statement->bindParam(3, $unassigned_xp);
     $statement->bindParam(4, $health);
     $statement->bindParam(5, $attack);
     $statement->bindParam(6, $agility);
-    $statement->bindParam(7, $spent_xp);
+    $statement->bindParam(7, $level);
     $statement->execute();
 
     echo "Warrior Created!";
