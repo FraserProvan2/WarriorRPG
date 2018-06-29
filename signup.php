@@ -13,6 +13,7 @@ $unassigned_xp = 0;
 $health = 10;
 $attack = 1;
 $agility = 1;
+$spent_xp = 0;
 
 // Used later to check if user exists
 $check_username = $conn->prepare("SELECT * FROM users WHERE username = ?");
@@ -38,9 +39,21 @@ else if ($rows_username['username'] === $username) {
     echo "<br><br><button onclick='window.history.back();'>Back</button>";
 }
 
+// Makes sure word is atleast 5 letters
+else if (strlen($username) < 4){
+    echo "Username must be atleast 5 characters";
+    echo "<br><br><button onclick='window.history.back();'>Back</button>";
+}
+
 // Checks theres a Password
 else if ($password == false) {
     echo "Please enter a Password";
+    echo "<br><br><button onclick='window.history.back();'>Back</button>"; 
+}
+
+// Makes sure password is atleast 5 letters
+else if (strlen($password) < 4){
+    echo "Password must be atleast 5 characters";
     echo "<br><br><button onclick='window.history.back();'>Back</button>";
 }
 
@@ -55,13 +68,14 @@ else {
     $hashed_pass = password_hash($password, PASSWORD_DEFAULT);
 
     // Query to insert new user
-    $statement = $conn->prepare("INSERT INTO users (username, password, unassigned_xp, health, attack, agility) VALUES (?, ?, ?, ?, ?, ?)");
+    $statement = $conn->prepare("INSERT INTO users (username, password, unassigned_xp, health, attack, agility, spent_xp) VALUES (?, ?, ?, ?, ?, ?, ?)");
     $statement->bindParam(1, $username);
     $statement->bindParam(2, $hashed_pass);
     $statement->bindParam(3, $unassigned_xp);
     $statement->bindParam(4, $health);
     $statement->bindParam(5, $attack);
     $statement->bindParam(6, $agility);
+    $statement->bindParam(7, $spent_xp);
     $statement->execute();
 
     echo "Warrior Created!";
