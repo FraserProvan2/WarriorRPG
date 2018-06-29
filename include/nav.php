@@ -10,6 +10,6 @@
 <div class="row">
     <a href="" class="col btn button">Leaderboards</a>
 </div>
-<form action="signout.php" type="get "class="row">
+<form action="account_signout.php" type="get "class="row">
          <button class="btn button col">Sign Out</button>
 </form>

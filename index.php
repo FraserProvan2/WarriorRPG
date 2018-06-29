@@ -15,7 +15,7 @@
 
             <!--Log In -->
             <div class="col-md">
-                <form method='get'  action="signin.php">
+                <form method='get'  action="account_signin.php">
                 <input class="form-control mr-sm-1" type="search" name="user" placeholder="Username">
                 <input class="form-control mr-sm-2" type="password" name="pass" placeholder="Password">
                 <button class="btn col" type="submit">Login</button>
@@ -24,7 +24,7 @@
 
             <!--Sign Up -->
             <div class="col">
-                <form method='get' action="signup.php">
+                <form method='get' action="account_signup.php">
                     <input class="form-control mr-sm-1" type="search" name="username" placeholder="Username">
                     <input class="form-control mr-sm-2" type="password" name="password" placeholder="Password">
                     <input class="form-control mr-sm-2" type="password" name="confirm-password" placeholder="Confirm Password">
