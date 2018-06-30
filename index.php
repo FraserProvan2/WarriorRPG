@@ -6,29 +6,35 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
     <title>Log In - Warrior RPG</title>
   </head>
-  <body>
+  <body style="background-image: url('img/dark_embroidery.png');">
 
     <div class="container">
+
+        <h1 class="title">Warrior RPG</h1>
+        
         <div class="row">
 
             <!--Log In -->
-            <div class="col-md">
+            <div class="col-md left">
+                <h5 class="sub-heading">Sign In</h5>
                 <form method='get'  action="account_signin.php">
-                <input class="form-control mr-sm-1" type="search" name="user" placeholder="Username">
-                <input class="form-control mr-sm-2" type="password" name="pass" placeholder="Password">
-                <button class="btn col" type="submit">Login</button>
+                <input class="form-control mr-sm-1 login-textfields " type="search" name="user" placeholder="Username">
+                <input class="form-control mr-sm-2 login-textfields " type="password" name="pass" placeholder="Password">
+                <button class="btn col login-buttons" type="submit">Login</button>
                 </form>
             </div>
 
             <!--Sign Up -->
-            <div class="col">
+            <div class="col right">
+            <h5 class="sub-heading">Sign Up</h5>
                 <form method='get' action="account_signup.php">
-                    <input class="form-control mr-sm-1" type="search" name="username" placeholder="Username">
-                    <input class="form-control mr-sm-2" type="password" name="password" placeholder="Password">
-                    <input class="form-control mr-sm-2" type="password" name="confirm-password" placeholder="Confirm Password">
-                    <button class="btn col" type="submit">Sign Up</button>
+                    <input class="form-control mr-sm-1 login-textfields " type="search" name="username" placeholder="Username">
+                    <input class="form-control mr-sm-2 login-textfields " type="password" name="password" placeholder="Password">
+                    <input class="form-control mr-sm-2 login-textfields " type="password" name="confirm-password" placeholder="Confirm Password">
+                    <button class="btn col login-buttons" type="submit">Sign Up</button>
                 </form>
             </div>
 

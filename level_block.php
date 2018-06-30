@@ -7,9 +7,9 @@ $current_user = $_SESSION['gatekeeper'][id];
 $selectUser = $conn->query("SELECT * FROM users WHERE id=$current_user");
 $userData = $selectUser->fetch();
 
-// Adds one level to agility
-$leveled_up_agility= $userData[agility] + 1;
-$levelup = $conn->prepare("UPDATE users SET agility = $leveled_up_agility WHERE id = $current_user");
+// Adds one level to block
+$leveled_up_block= $userData[block] + 1;
+$levelup = $conn->prepare("UPDATE users SET block = $leveled_up_block WHERE id = $current_user");
 $levelup->execute();
 
 // Updates unassigned points

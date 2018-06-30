@@ -8,7 +8,7 @@
     <a href="" class="col btn button">Guide</a>
 </div>
 <div class="row">
-    <a href="" class="col btn button">Leaderboards</a>
+    <a href="tab_leaderboards.php" class="col btn button">Leaderboards</a>
 </div>
 <form action="account_signout.php" type="get "class="row">
          <button class="btn button col">Sign Out</button>

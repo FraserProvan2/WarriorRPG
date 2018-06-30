@@ -12,7 +12,7 @@ $password2 = htmlentities($_GET["confirm-password"]);
 $unassigned_xp = 0;
 $health = 10;
 $attack = 1;
-$agility = 1;
+$block = 1;
 $level = 1;
 
 // Used later to check if user exists
@@ -40,7 +40,7 @@ else if ($rows_username['username'] === $username) {
 }
 
 // Makes sure word is atleast 5 letters
-else if (strlen($username) < 4){
+else if (strlen($username) < 5){
     echo "Username must be atleast 5 characters";
     echo "<br><br><button onclick='window.history.back();'>Back</button>";
 }
@@ -52,7 +52,7 @@ else if ($password == false) {
 }
 
 // Makes sure password is atleast 5 letters
-else if (strlen($password) < 4){
+else if (strlen($password) < 5){
     echo "Password must be atleast 5 characters";
     echo "<br><br><button onclick='window.history.back();'>Back</button>";
 }
@@ -68,13 +68,13 @@ else {
     $hashed_pass = password_hash($password, PASSWORD_DEFAULT);
 
     // Query to insert new user
-    $statement = $conn->prepare("INSERT INTO users (username, password, unassigned_xp, health, attack, agility, level) VALUES (?, ?, ?, ?, ?, ?, ?)");
+    $statement = $conn->prepare("INSERT INTO users (username, password, unassigned_xp, health, attack, block, level) VALUES (?, ?, ?, ?, ?, ?, ?)");
     $statement->bindParam(1, $username);
     $statement->bindParam(2, $hashed_pass);
     $statement->bindParam(3, $unassigned_xp);
     $statement->bindParam(4, $health);
     $statement->bindParam(5, $attack);
-    $statement->bindParam(6, $agility);
+    $statement->bindParam(6, $block);
     $statement->bindParam(7, $level);
     $statement->execute();
 
