@@ -20,23 +20,22 @@
 
             <div class="col-md-9 left">
 
-                <h4 class="sub-heading">My Warrior</h4>
+                <!--Gets users information-->
+                <?php
+                $current_user = $_SESSION['gatekeeper'][id];
+                $selectUser   = $conn->query("SELECT * FROM users WHERE id=$current_user");
+                $userData     = $selectUser->fetch();
+                 ?>
+
+                <!--Username-->
+                <h4 class="sub-heading"> <?php echo ucfirst($userData[username]); ?> </h4>
 
                 <div id="side-panel">
 
-                    <!--Gets users information-->
-                    <?php
-                    $current_user = $_SESSION['gatekeeper'][id];
-                    $selectUser   = $conn->query("SELECT * FROM users WHERE id=$current_user");
-                    $userData     = $selectUser->fetch();
-                    ?>
-
                     <div class="row">
 
-                        <div class="levels-div col-md-8">
+                        <div class="levels-div col-md">
 
-                            <!--Username-->
-                            <h5> <?php echo ucfirst($userData[username]); ?> </h5>
                             <table class="table-striped table-hover">
                                 <!--Level-->
                                 <tr>
@@ -91,11 +90,6 @@
                                 </tr>
                             </table>
                         </div>
-
-                        <div class="col">
-                            image here
-                        </div>
-
                     </div>
 
                 </div>
