@@ -18,7 +18,7 @@
         <div class="row">
 
             <!--Log In -->
-            <div class="col-md left">
+            <div class="col-md content-box">
                 <h5 class="sub-heading">Sign In</h5>
                 <form method='get'  action="account_signin.php">
                 <input class="form-control mr-sm-1 login-textfields " type="search" name="user" placeholder="Username">
@@ -28,7 +28,7 @@
             </div>
 
             <!--Sign Up -->
-            <div class="col right">
+            <div class="col content-box">
             <h5 class="sub-heading">Sign Up</h5>
                 <form method='get' action="account_signup.php">
                     <input class="form-control mr-sm-1 login-textfields " type="search" name="username" placeholder="Username">

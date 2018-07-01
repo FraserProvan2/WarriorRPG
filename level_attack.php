@@ -28,4 +28,4 @@ if ($userData[unassigned_xp]  > 0) {
 }
 
 // Returns to stats page
-header('location: tab_stats.php');
+header('location: main.php');

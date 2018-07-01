@@ -1,8 +1,12 @@
+body {
+    color:#4a4949;
+}
+
 .title {
     text-align: center;
-    color: #e0e0e0;
-    margin-top:15px;
+    color: #00E676;
     margin-bottom:15px;
+    margin-top: 15px;
 }
 
 .sub-heading {
@@ -11,46 +15,21 @@
 }
 
 .login-textfields {
-text-align: center;
+    text-align: center;
+    margin-bottom: 2px;
 }
 
-.left {
-    background-color: #e0e0e0;
+.content-box {
+    background-color: #f1f1f1;
     border-radius: 5px;
     padding:5px;
     margin-right:2px;
     margin-left:2px;
+    margin-top:5px;
     -webkit-box-shadow: 10px 11px 20px -12px rgba(0,0,0,0.75);
     -moz-box-shadow: 10px 11px 20px -12px rgba(0,0,0,0.75);
     box-shadow: 10px 11px 20px -12px rgba(0,0,0,0.75);
-    border: 2px solid #6d6c6c;
-}
-
-.right {
-    background-color: #e0e0e0;
-    border-radius: 5px;
-    padding:5px;    
-    margin-right:2px;
-    margin-left:2px;
-    -webkit-box-shadow: 10px 11px 20px -12px rgba(0,0,0,0.75);
-    -moz-box-shadow: 10px 11px 20px -12px rgba(0,0,0,0.75);
-    box-shadow: 10px 11px 20px -12px rgba(0,0,0,0.75);
-    border: 2px solid #6d6c6c;
-}
-
-.button {
-    margin-right: 15px;
-    margin-left: 15px;
-    margin-bottom: 2px;
-    border-radius: 5px;
-    background-color:#cacaca;
-    color:black;
-    
-}
-
-.button:hover {
-    background-color: #b5b5b5;
-    color:black;
+    border: 1px solid #6d6c6c;
 }
 
 .levels-div {
@@ -67,11 +46,11 @@ text-align: center;
 
 .login-buttons {
     margin-top: 2px;
-    background-color:#cacaca;
+    background-color:#f1f1f1;
 }
 
 .login-buttons:hover {
-    background-color: #b5b5b5;
+    background-color: #e2e1e1;
 }
 
 td {
@@ -85,6 +64,29 @@ table {
 .users-table {
     overflow-y:scroll; 
     height:250px;
+}
+
+.signout-btn {
+    padding-left: 5px;
+    color: #f1f1f1;
+    border:none; 
+    font: inherit;
+    cursor: pointer;
+    background-color: transparent;
+    float:right;
+}
+
+#footer {
+    color: #00E676;
+    border-radius: 7.5px;
+    margin-top: 7.5px;
+    text-align: center;
+    margin-bottom: -15px;
+    margin-top: 10px;
+}
+
+.avaliable-tag {
+    font-weight: bold;
 }
 
 @media only screen and (max-width: 1000px) {
