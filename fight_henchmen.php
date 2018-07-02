@@ -27,16 +27,16 @@ include 'include/auth.php';
 
                 <h4 class="sub-heading">Henchmen</h4>
 
-
-
-                <div id="claim-response">
-                    <button onclick="attackHenchmen()">attack</button>
-                    <button onclick="blockHenchmen()">block</button>
-
+                    <!--Combat log-->
                     <div id="log">
                         <br><br>
                     </div>
-                </div>
+
+                    <!--Claim rewards-->
+                    <div id="claim-response">
+                        <button onclick="attackHenchmen()">attack</button>
+                        <button onclick="blockHenchmen()">block</button>
+                    </div>
 
             </div>
         </div>
@@ -94,11 +94,11 @@ function blockHenchmen() {
 function checkAlive() {
     if (player.health <= 0) {
         console.log('player died');
-        div.innerHTML = "<p>You Lost!</p>";
+        div.innerHTML += "<p>You Lost!</p>";
     }
     if (opponent.health <= 0) {
         console.log('opponent.died');
-        log.innerHTML = "<p>Winner!</p>";
+        log.innerHTML += "<p>Winner!</p>";
         div.innerHTML = "<button onclick='claim5()'>Claim Reward</button>";
     }
 }

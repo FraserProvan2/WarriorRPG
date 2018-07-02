@@ -28,15 +28,17 @@ function attack() {
 }
 
 function opponentAttackPlayer() {
-    var attackChance = Math.floor(Math.random() * 3) + 1;
-    if (attackChance === 1) {
-        console.log("opponent missed");
-        log.innerHTML += "<p>Opponent missed!</p>";
-    }
-    else {
-        player.health = player.health - opponent.attack;
-        console.log("opponent attacked player for " + opponent.attack);
-        log.innerHTML += "<p>Opponent attacked you for " + opponent.attack + "!</p>";
+    if (opponent.health >= 1) {
+        var attackChance = Math.floor(Math.random() * 3) + 1;
+        if (attackChance === 1) {
+            console.log("opponent missed");
+            log.innerHTML += "<p>Opponent missed!</p>";
+        }
+        else {
+            player.health = player.health - opponent.attack;
+            console.log("opponent attacked player for " + opponent.attack);
+            log.innerHTML += "<p>Opponent attacked you for " + opponent.attack + "!</p>";
+        }
     }
 }
 
