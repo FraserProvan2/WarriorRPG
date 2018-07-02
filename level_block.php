@@ -27,5 +27,5 @@ if ($userData[unassigned_xp]  > 0) {
 
 }
 
-// Returns to stats page
+// Returns to main page
 header('location: main.php');

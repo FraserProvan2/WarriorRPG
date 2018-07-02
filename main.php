@@ -1,4 +1,7 @@
-<?php include 'include/db.php';?>
+<?php 
+include 'include/db.php'; 
+include 'include/auth.php'; 
+?>
 
 <!doctype html>
 <html lang="en">
@@ -30,6 +33,35 @@
             <div class="col-md-7 content-box">
 
                 <h4 class="sub-heading">Play</h4>
+
+                <div class="play-table levels-div">
+                    <table class='table-striped'>
+                            <thead>
+                                <tr>
+                                    <th scope='col' id='table-heading'>Opponent</th>
+                                    <th scope='col' id='table-heading'>Reward</th>
+                                    <th scope='col' id='table-heading'></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+
+                            <!--Henchmen-->
+                            <tr>
+                                <td>Henchmen</td>
+                                <td>0 Levels</td>
+                                <td><a href="game/fight_henchmen.php" class="btn fight-btn">Fight</a></td>
+                            </tr> 
+
+                            <!-- To add new opponent
+                            <tr>
+                                <td>Oppenent Name</td>
+                                <td>Reward (In Levels)</td>
+                                <td><a href="" class="btn fight-btn">Fight</a></td>
+                            </tr> 
+                            -->
+                            </tbody>
+                        </table>
+                    </div>
 
             </div>
 
@@ -98,7 +130,7 @@
                             </tr>
                             <!--Avaliable Points-->
                             <tr>
-                                <td class="avaliable-tag">Avaliable levels</td>
+                                <td class="avaliable-tag">Avaliable Levels</td>
                                 <td class="avaliable-tag"><?php echo $userData[unassigned_xp]; ?> </td>
                                 <td></td>
                             </tr>
