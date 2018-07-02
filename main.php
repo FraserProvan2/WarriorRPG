@@ -49,7 +49,7 @@ include 'include/auth.php';
                             <tr>
                                 <td>Henchmen</td>
                                 <td>0 Levels</td>
-                                <td><a href="game/fight_henchmen.php" class="btn fight-btn">Fight</a></td>
+                                <td><a href="fight_henchmen.php" class="btn fight-btn">Fight</a></td>
                             </tr> 
 
                             <!-- To add new opponent

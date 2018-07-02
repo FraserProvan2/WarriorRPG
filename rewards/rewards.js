@@ -48,5 +48,5 @@ function claim10() {
     
 // Gets response from sign up and sends back error (To div)
 function response(e) {
-    document.getElementById('claim_response').innerHTML = e.target.responseText;
+    document.getElementById('claim-response').innerHTML = e.target.responseText;
 }
