@@ -119,6 +119,70 @@ table {
     width: 100%;
 }
 
+#log{
+    font-size: 14px;
+    font-weight: normal;
+}
+
+.playerLog {
+    color:#00ff81;
+    text-align: center;
+    margin-top: 15px;
+}
+
+.enemyLog {
+    color:#ff6363;
+    text-align: center;
+    margin-top: 15px;
+}
+
+.effect {
+    color:orange;
+    text-align: center;
+    margin-top: 15px;
+}
+
+.artwork {
+    width: 100%;
+}
+
+.attack-block {
+    margin-right: 3px;
+    margin-left: 3px;
+    margin-top: 5px;
+    background-color: #706f6f;
+    color: #00ff81;
+}
+
+.attack-block:hover {
+    background-color: #808080;
+    color: #00ff81;
+}
+
+.tools-div {
+    padding-right: 11px;
+    padding-left: 11px;
+}
+
+.victory{
+    color: #c164ad;
+    font-size: 50px;
+    text-align: center;
+}
+
+.oppHP {
+    text-align:right;
+    color:#ff3838;
+    padding-top:10px;
+    font-size: 20px;
+}
+
+.playerHP {
+    color:#57ff5e;
+    padding-top:10px;
+    font-size: 20px;
+}
+
 @media only screen and (max-width: 1000px) {
     .table-toHide {
       display:none;

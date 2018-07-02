@@ -15,7 +15,7 @@ include 'include/auth.php';
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="css/style.css">
-    <title>Fight vs. Henchmen</title>
+    <title>vs. Henchmen</title>
   </head>
   <body style="background-image: url('img/dark_embroidery.png');">
     <div class="container">
@@ -27,16 +27,25 @@ include 'include/auth.php';
 
                 <h4 class="sub-heading">Henchmen</h4>
 
-                    <!--Combat log-->
-                    <div id="log">
-                        <br><br>
-                    </div>
+                <img src="img/fights/henchmen.png" class="img-fluid rounded artwork">
+                
+                <div class="row">
+                        <h6 class="col playerHP">HP:  <a id="playerHP"></a></h6>
+                        <h6 class="col oppHP">HP: <a id="enemyHP"></a></h6>
+                </div>
 
                     <!--Claim rewards-->
-                    <div id="claim-response">
-                        <button onclick="attackHenchmen()">attack</button>
-                        <button onclick="blockHenchmen()">block</button>
+                    <div id="claim-response" class="row tools-div">
+                        <button onclick="attackHenchmen()" class="col-md attack-block btn">attack</button>
+                        <button onclick="blockHenchmen()" class="col-md attack-block btn">block</button>
                     </div>
+
+                    <!--Combat log-->
+                    <div class="row"> 
+                        <div class="col" id="log">
+                                <br><br>
+                            </div>
+                        </div>
 
             </div>
         </div>
@@ -47,7 +56,6 @@ include 'include/auth.php';
             </div>
     </div>
 
-    
     <script>
 
     var div = document.getElementById('claim-response');
@@ -98,10 +106,21 @@ function checkAlive() {
     }
     if (opponent.health <= 0) {
         console.log('opponent.died');
-        log.innerHTML += "<p>Winner!</p>";
-        div.innerHTML = "<button onclick='claim5()'>Claim Reward</button>";
+        log.innerHTML += "<p class='victory'>Winner!</p>";
+        div.innerHTML = "<button onclick='claim5()' class='col-md attack-block btn' >Return Home</button>";
     }
 }
+
+//Interface
+    //Players health:
+    var playersHealth = setInterval(function () {
+        document.getElementById("playerHP").innerHTML = player.health;
+     }, 1);
+
+    //Gargon health:
+    var GargonHealth = setInterval(function () {
+        document.getElementById("enemyHP").innerHTML = opponent.health;
+    }, 1);
 
     </script>
     <script type='text/javascript' src='scripts/game_mechanics.js'></script>
