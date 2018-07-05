@@ -23,27 +23,32 @@ include 'include/auth.php';
         <h1 class="title">Warrior RPG</h1>
 
         <div class="row">
-            <div class="col-md content-box">
+            <div class="col-md content-box fightBox">
 
-                <h4 class="sub-heading">Henchmen</h4>
-
-                <img src="img/fights/henchmen.png" class="img-fluid rounded artwork">
-                
+                <!--Names-->
                 <div class="row">
-                        <h6 class="col playerHP">HP:  <a id="playerHP"></a></h6>
-                        <h6 class="col oppHP">HP: <a id="enemyHP"></a></h6>
+                        <h6 class="col playerName"><?php echo $_SESSION['gatekeeper'][username]; ?></h6>
+                        <h6 class="col oppName">Henchmen</h6>
+                </div>
+
+                <img src="img/fights/TEMPLATE.png" class="img-fluid rounded artwork">
+
+                <!--HP-->
+                <div class="row">
+                        <h6 class="col playerHP">HP:  <a id="playerHP" class="hpLarge"></a></h6>
+                        <h6 class="col oppHP">HP: <a id="enemyHP" class="hpLarge"></a></h6>
                 </div>
 
                     <!--Claim rewards-->
                     <div id="claim-response" class="row tools-div">
-                        <button onclick="attackHenchmen()" class="col-md attack-block btn">attack</button>
-                        <button onclick="blockHenchmen()" class="col-md attack-block btn">block</button>
+                        <button onclick="attackHenchmen()" class="col-md attack-block btn">Attack</button>
+                        <button onclick="blockHenchmen()" class="col-md attack-block btn">Block</button>
                     </div>
 
                     <!--Combat log-->
                     <div class="row"> 
                         <div class="col" id="log">
-                                <br><br>
+                                <br><br><br><br>
                             </div>
                         </div>
 
@@ -102,23 +107,24 @@ function blockHenchmen() {
 function checkAlive() {
     if (player.health <= 0) {
         console.log('player died');
-        div.innerHTML += "<p>You Lost!</p>";
+        log.innerHTML += "<p class='loss'>You Lost!</p>";
+        div.innerHTML = "<button onclick='window.history.back()' class='col-md attack-block btn' >Return Home</button>";
     }
     if (opponent.health <= 0) {
         console.log('opponent.died');
         log.innerHTML += "<p class='victory'>Winner!</p>";
-        div.innerHTML = "<button onclick='claim5()' class='col-md attack-block btn' >Return Home</button>";
+        div.innerHTML = "<button onclick='window.history.back()' class='col-md attack-block btn' >Return Home</button>";
     }
 }
 
 //Interface
     //Players health:
-    var playersHealth = setInterval(function () {
+    var playerHealth = setInterval(function () {
         document.getElementById("playerHP").innerHTML = player.health;
-     }, 1);
+    }, 1);
 
-    //Gargon health:
-    var GargonHealth = setInterval(function () {
+    //Henchmen health:
+    var henchmenHealth = setInterval(function () {
         document.getElementById("enemyHP").innerHTML = opponent.health;
     }, 1);
 
@@ -129,5 +135,4 @@ function checkAlive() {
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
   </body>
-</html>
-
+</html> 

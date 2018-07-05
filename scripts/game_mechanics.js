@@ -1,10 +1,10 @@
 var playersFullHealth = player.health; //saves players health for perfect block
+var critHit = player.attack * 2;
 
 //Players moves
 function attack() {
     var attackChance = Math.floor(Math.random() * 3) + 1;
     var criticalChance = Math.floor(Math.random() * 7) + 1;
-    var critHit = player.attack * 2;
     if (criticalChance === 1) {
         opponent.health = opponent.health - critHit;
         console.log("player critically attacked opponent for " + critHit);
@@ -44,21 +44,26 @@ function opponentAttackPlayer() {
 
 function block() {
     var blockChance = Math.floor(Math.random() * 10) + 1;
-    if (blockChance <= 5) {
+    if (blockChance <= 4) {
+        var percentHealed = Math.round((playersFullHealth / 1) * 0.20);
+        player.health = percentHealed; //heals 20% of players total health
+        console.log("block success, health increased by " + percentHealed);
+        log.innerHTML = "<p class='playerLog'>Block success! " + percentHealed + "HP restored!</p>";
+    }
+    else if (blockChance === 10 && player.health < playersFullHealth) {
+        player.health = playersFullHealth; //returns players health to full
+        console.log("perfect block, health restored back to " + playersFullHealth);
+        log.innerHTML = "<p class='playerLog'>Perfect block! Players health restored to " + player.health + "HP!</p>";
+    }
+    else if (blockChance === 10 && player.health >= playersFullHealth) {
+        opponent.health = opponent.health - critHit;
+        console.log("Parry success! You CRITTICALLY attacked the enemy for " + critHit);
+        log.innerHTML = "<p class='playerLog'>Parry success! You CRITTICALLY attacked the enemy for " + critHit + "</p>";
+    }
+    else {
         console.log("block failed");
         log.innerHTML = "<p class='playerLog'>Block failed!</p>";
         opponentAttackPlayer(); 
     }
-    if (blockChance === 10) {
-        player.health = playersFullHealth; //returns players health to full
-        console.log("perfect block, health restored back to " + playersFullHealth);
-        log.innerHTML = "<p class='playerLog'>Perfect block! Players health restored to" + player.health + "HP!</p>";
-    }
-    else if (blockChance > 5 && blockChance < 9) {
-        var percentHealed = (playersFullHealth / 1) * 0.25;
-        player.health = player.health + percentHealed;  //heals 25% of players total health
-        console.log("block success, health increased by " + percentHealed);
-        log.innerHTML = "<p class='playerLog'>Block success! " + player.health + "HP restored!</p>";
-    }
-    checkAlive(); //checks if eithe rplayer or oppenent is alive
+    checkAlive(); //checks if eithe rplayer or oppenent is alive */
 }

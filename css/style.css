@@ -31,7 +31,7 @@ body {
     -webkit-box-shadow: 10px 11px 20px -12px rgba(0,0,0,0.75);
     -moz-box-shadow: 10px 11px 20px -12px rgba(0,0,0,0.75);
     box-shadow: 10px 11px 20px -12px rgba(0,0,0,0.75);
-    border: 1px solid #979797;
+    border: solid 2px #706f6f;
 }
 
 .levels-div {
@@ -131,7 +131,7 @@ table {
 }
 
 .enemyLog {
-    color:#ff6363;
+    color:#ff5050;
     text-align: center;
     margin-top: 15px;
 }
@@ -144,6 +144,7 @@ table {
 
 .artwork {
     width: 100%;
+    border: solid 2px #706f6f;
 }
 
 .attack-block {
@@ -166,21 +167,48 @@ table {
 
 .victory{
     color: #c164ad;
-    font-size: 50px;
+    font-size: 40px;
+    text-align: center;
+}
+
+.loss{
+    color: #ff5050;
+    font-size: 40px;
     text-align: center;
 }
 
 .oppHP {
     text-align:right;
-    color:#ff3838;
+    color:#ff5050;
     padding-top:10px;
     font-size: 20px;
 }
 
+.hpLarge {
+    font-size:25px;
+}
+
 .playerHP {
-    color:#57ff5e;
+    color:#00ff81;
     padding-top:10px;
     font-size: 20px;
+}
+
+.oppName {
+    text-align:right;
+    color:#ff5050;
+    padding-top:10px;
+    font-size: 25px;
+}
+
+.playerName {
+    color:#00ff81;
+    padding-top:10px;
+    font-size: 25px;
+}
+
+.fightBox {
+    padding: 20px;
 }
 
 @media only screen and (max-width: 1000px) {

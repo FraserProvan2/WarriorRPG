@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <script type='text/javascript' src='scripts/game.js'></script>
+    
+    <!-- UI -->
+    <script type='text/javascript'>
+
+        //Players health:
+        var playersHealth = setInterval(function () {
+            document.getElementById("playerHP").innerHTML = player.health;
+        }, 1);
+
+        //Henchman health:
+        var henchmanHealth = setInterval(function () {
+            document.getElementById("henchmanHP").innerHTML = henchman.health;
+        }, 1);
+    
+    </script>
+    <title>Act 1 - Warrior Training</title>
+  </head>
+  <body style="background-image: url('img/dark_embroidery.png');">
+        <div class="container"> 
+            <h1 class="title">Warrior Training</h1>
+            <div class="row">
+
+                <div class="col"></div>
+                <div class="col-md-6 left">
+
+                        <div class="row">
+                                <h6 class="col playerHP">Player</h6>
+                                <h6 class="col oppHP">Henchmen</h6>
+                        </div>
+        
+                        <img src="img/2.png" class="rounded img-fluid stageArt">
+        
+                        <div class="row">
+                                <h6 class="col playerHP2">HP:  <a id="playerHP"></a></h6>
+                                <h6 class="col oppHP2">HP: <a id="henchmanHP"></a></h6>
+                        </div>
+                        
+                        <div class="col"></div>
+                        <button class="btn col" onclick="attackHenchman()">Attack</button>
+                        <button class="btn col" onclick="blockHenchman()">Block</button>
+                        <div class="col"></div>
+                        
+                        <div class="row">
+                            <h5 class="sub-title col">Current Turn<h5>
+                        </div>
+
+                <div id="log"></div>
+
+                </div>
+                <div class="col"></div>
+
+            </div>
+        </div>
+
+        
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  </body>
+</html>
