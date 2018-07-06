@@ -17,14 +17,16 @@ include 'include/auth.php';
 
 <body style="background-image: url('img/dark_embroidery.png');">
 
-    <!--Sign Out Button-->
-    <form action="account_signout.php" type="get">
-        <button type="submit" class="signout-btn">Sign Out</button>
-    </form>
+
+
+    
 
     <div class="container">
 
         <h1 class="title">Warrior RPG</h1>
+
+        <!--Nav-->
+        <?php include 'include/nav.php'; ?>
 
         <!--Row 1-->
         <div class="row">

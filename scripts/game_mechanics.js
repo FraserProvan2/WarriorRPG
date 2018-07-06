@@ -44,9 +44,10 @@ function opponentAttackPlayer() {
 
 function block() {
     var blockChance = Math.floor(Math.random() * 10) + 1;
+    var percentHealed = Math.round((playersFullHealth / 1) * 0.20);
+    
     if (blockChance <= 4) {
-        var percentHealed = Math.round((playersFullHealth / 1) * 0.20);
-        player.health = percentHealed; //heals 20% of players total health
+        player.health = player.health + percentHealed; //heals 20% of players total health
         console.log("block success, health increased by " + percentHealed);
         log.innerHTML = "<p class='playerLog'>Block success! " + percentHealed + "HP restored!</p>";
     }
@@ -56,9 +57,9 @@ function block() {
         log.innerHTML = "<p class='playerLog'>Perfect block! Players health restored to " + player.health + "HP!</p>";
     }
     else if (blockChance === 10 && player.health >= playersFullHealth) {
-        opponent.health = opponent.health - critHit;
-        console.log("Parry success! You CRITTICALLY attacked the enemy for " + critHit);
-        log.innerHTML = "<p class='playerLog'>Parry success! You CRITTICALLY attacked the enemy for " + critHit + "</p>";
+        player.health = player.health + percentHealed; //heals 20% of players total health
+        console.log("Perfect block! Your already at full health. " + percentHealed + "HP restored!");
+        log.innerHTML = "<p class='playerLog'>Perfect block! Your already at full health. " + percentHealed + "HP restored!</p>";
     }
     else {
         console.log("block failed");
