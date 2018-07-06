@@ -31,7 +31,8 @@ include 'include/auth.php';
                         <h6 class="col oppName">Henchmen</h6>
                 </div>
 
-                <img src="img/fights/TEMPLATE.png" class="img-fluid rounded artwork">
+                <!--Artwork-->
+                <img src="img/fights/henchmen.png" class="img-fluid rounded artwork">
 
                 <!--HP-->
                 <div class="row">
@@ -44,6 +45,8 @@ include 'include/auth.php';
                         <button onclick="attackHenchmen()" class="col-md attack-block btn">Attack</button>
                         <button onclick="blockHenchmen()" class="col-md attack-block btn">Block</button>
                     </div>
+
+                    <h6 class="turn">Turn <a id="turn"></a></h6>
 
                     <!--Combat log-->
                     <div class="row"> 
@@ -85,14 +88,12 @@ include 'include/auth.php';
 
     //creates object for henchmen
     var opponent = new Object();
-    opponent.health = 10;
+    opponent.health = 15;
     opponent.attack = 1; 
-    opponent.block = 1;
 
     //logs to confirm henchmens stats
     console.log("henchmens health is " + opponent.health);
     console.log("henchmens attack is " + opponent.attack);
-    console.log("henchmens block is " + opponent.block);
 
 //Henchmen Fight functions
 function attackHenchmen() {
@@ -118,6 +119,11 @@ function checkAlive() {
 }
 
 //Interface
+    //Current Turn:
+    var henchmenHealth = setInterval(function () {
+    document.getElementById("turn").innerHTML = turn;
+    }, 1);
+
     //Players health:
     var playerHealth = setInterval(function () {
         document.getElementById("playerHP").innerHTML = player.health;

@@ -136,7 +136,7 @@ table {
 }
 
 .enemyLog {
-    color:#ff5050;
+    color:#f55d5d;
     text-align: center;
     margin-top: 15px;
 }
@@ -149,7 +149,6 @@ table {
 
 .artwork {
     width: 100%;
-    border: solid 2px #706f6f;
 }
 
 .attack-block {
@@ -171,37 +170,37 @@ table {
 }
 
 .victory{
-    color: #c164ad;
+    color: #00ff81;
     font-size: 40px;
     text-align: center;
 }
 
 .loss{
-    color: #ff5050;
+    color: #f55d5d;
     font-size: 40px;
     text-align: center;
 }
 
 .oppHP {
     text-align:right;
-    color:#ff5050;
+    color:#f55d5d;
     padding-top:10px;
-    font-size: 20px;
+    font-size: 15px;
 }
 
 .hpLarge {
-    font-size:25px;
+    font-size:30px;
 }
 
 .playerHP {
     color:#00ff81;
     padding-top:10px;
-    font-size: 20px;
+    font-size: 15px;
 }
 
 .oppName {
     text-align:right;
-    color:#ff5050;
+    color:#f55d5d;
     padding-top:10px;
     font-size: 25px;
 }
@@ -214,6 +213,13 @@ table {
 
 .fightBox {
     padding: 20px;
+}
+
+.turn {
+    margin-top: 10px;
+    text-align: center;
+    text-decoration: underline;
+    font-size: 20px;
 }
 
 @media only screen and (max-width: 1000px) {
