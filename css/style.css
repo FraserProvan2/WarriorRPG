@@ -31,7 +31,7 @@ body {
     -webkit-box-shadow: 10px 11px 20px -12px rgba(0,0,0,0.75);
     -moz-box-shadow: 10px 11px 20px -12px rgba(0,0,0,0.75);
     box-shadow: 10px 11px 20px -12px rgba(0,0,0,0.75);
-    border: solid 2px #706f6f;
+    border: solid 1px #706f6f;
 }
 
 .nav-btn {
@@ -42,6 +42,7 @@ body {
     -webkit-box-shadow: 10px 11px 20px -12px rgba(0,0,0,0.75);
     -moz-box-shadow: 10px 11px 20px -12px rgba(0,0,0,0.75);
     box-shadow: 10px 11px 20px -12px rgba(0,0,0,0.75);
+    border: solid 1px #706f6f;
 }
 
 .nav-btn:hover {
@@ -104,7 +105,7 @@ body {
 
 .fight-btn {
     background-color: #706f6f;
-    color: #00ff81;
+    color: white;
     padding-top: 2px;
     padding-bottom: 2px;
     padding-left: 15px;
@@ -220,6 +221,19 @@ table {
     text-align: center;
     text-decoration: underline;
     font-size: 20px;
+}
+
+.stats {
+    text-align: center;
+}
+
+.stat-highlight {
+    color:#00ff81!important;
+}
+
+.stat-heading {
+    text-decoration: underline;
+    color:#00ff81;
 }
 
 @media only screen and (max-width: 1000px) {
