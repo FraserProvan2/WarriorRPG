@@ -54,12 +54,12 @@ include 'include/auth.php';
                         <td>20</td>
                     </tr>
                     <tr>
-                        <td>25 - 50</td>
-                        <td>22</td>
+                        <td>26 - 55</td>
+                        <td>25</td>
                     </tr>
                     <tr>
-                        <td>50 – 100</td>
-                        <td>25</td>
+                        <td>85+</td>
+                        <td>30</td>
                     </tr>
                 </table>
 

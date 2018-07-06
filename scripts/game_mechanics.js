@@ -46,7 +46,17 @@ function opponentAttackPlayer() {
 
 function block() {
     var blockChance = Math.floor(Math.random() * 10) + 1;
-    var percentHealed = Math.round((playersFullHealth / 1) * 0.20);
+    
+    //heal % based on level
+    if (player.block < 25) { //level  1-25
+        var percentHealed = Math.round((playersFullHealth / 1) * 0.20);
+    }
+    if (player.block > 25 && player.block < 55) { //level  26-55
+        var percentHealed = Math.round((playersFullHealth / 1) * 0.25);
+    }
+    if (player.block > 85) { //level  85+
+        var percentHealed = Math.round((playersFullHealth / 1) * 0.30);
+    }
     
     if (blockChance <= 4) {
         player.health = +player.health + +percentHealed; //heals 20% of players total health
@@ -59,7 +69,7 @@ function block() {
         log.innerHTML = "<p class='playerLog'>+ Perfect block! Players health restored to " + player.health + "HP!</p>";
     }
     else if (blockChance === 10 && player.health >= playersFullHealth) {
-        player.health = +player.health + +percentHealed; //heals 20% of players total health
+        player.health = +player.health + +percentHealed; //heals % of players total health
         console.log("Perfect block! Your already at full health. " + percentHealed + "HP restored!");
         log.innerHTML = "<p class='playerLog'>+ Perfect block! Your already at full health. " + percentHealed + "HP restored!</p>";
     }
