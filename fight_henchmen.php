@@ -24,6 +24,9 @@ $userData     = $selectUser->fetch();
 
         <h1 class="title">Warrior RPG</h1>
 
+        <!--Nav-->
+        <?php include 'include/nav.php'; ?>
+
         <div class="row">
             <div class="col-md content-box fightBox">
 
@@ -61,8 +64,6 @@ $userData     = $selectUser->fetch();
                 <!--Combat log-->
                 <div class="row">
                     <div class="col" id="log">
-                        <br><br>
-                        <br><br>
                     </div>
                 </div>
 
@@ -118,12 +119,12 @@ $userData     = $selectUser->fetch();
 
         //Checks everyones alive
         function checkAlive() {
-            if (player.health <= 0) {
+            if (player.health < 1) {
                 console.log('player died');
                 log.innerHTML += "<p class='loss'>You Lost!</p>";
                 div.innerHTML = "<button onclick='window.history.back()' class='col-md attack-block btn' >Return Home</button>";
             }
-            if (opponent.health <= 0) {
+            if (opponent.health < 1) {
                 console.log('opponent.died');
                 log.innerHTML += "<p class='victory'>Winner!</p>";
                 div.innerHTML = "<button onclick='window.history.back()' class='col-md attack-block btn' >Return Home</button>";

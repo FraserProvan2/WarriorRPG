@@ -36,7 +36,7 @@ include 'include/auth.php';
                             <thead>
                                 <tr>
                                     <th scope='col' id='table-heading'>Opponent</th>
-                                    <th scope='col' id='table-heading'>Reward</th>
+                                    <th scope='col' id='table-heading'>Reward (Levels)</th>
                                     <th scope='col' id='table-heading'></th>
                                 </tr>
                             </thead>
@@ -45,8 +45,14 @@ include 'include/auth.php';
                             <!--Henchmen-->
                             <tr>
                                 <td>Henchmen</td>
-                                <td>0 Levels</td>
+                                <td>0</td>
                                 <td><a href="fight_henchmen.php" class="btn fight-btn">Fight</a></td>
+                            </tr> 
+
+                            <tr>
+                                <td>Vernox</td>
+                                <td>1</td>
+                                <td><a href="fight_vernox.php" class="btn fight-btn">Fight</a></td>
                             </tr> 
 
                             <!-- To add new opponent

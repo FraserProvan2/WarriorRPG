@@ -66,9 +66,13 @@ include 'include/auth.php';
             </div>
 
             <!--Opponents specials exaplined-->
-            <div class="col-md content-box">
+            <div class="col-md content-box  stats">
 
                 <h4 class="sub-heading">Opponents Special Abilities</h4>
+
+                <p class="stat-heading">Vernox</p>
+                <p>• Pierces you with fear for 1 damage each turn<br>
+                • Cannot be attacked if you are over level 20</p>
 
             </div>
 
