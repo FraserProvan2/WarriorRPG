@@ -14,6 +14,3 @@ $userData     = $selectUser->fetch();
 $reward_claimed = $userData[unassigned_xp] + 5;
 $claim= $conn->prepare("UPDATE users SET unassigned_xp = $reward_claimed WHERE id = $current_user");
 $claim->execute();
-
-// Message to user
-echo "5 levels awarded!";

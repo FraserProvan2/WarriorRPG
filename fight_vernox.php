@@ -102,8 +102,8 @@ $userData     = $selectUser->fetch();
 
         //creates object for vernox
         var opponent = new Object();
-        opponent.health = 10;
-        opponent.attack = 1;
+        opponent.health = +playerHealth + +playerAttack;
+        opponent.attack = playerAttack / 2;
 
         //logs to confirm vernox stats
         console.log("vernoxs health is " + opponent.health);
@@ -111,19 +111,15 @@ $userData     = $selectUser->fetch();
 
         //Vernox Abilities
         function vernoxAbility() {
-            player.health = player.health - 1;
-            log.innerHTML += "<p class='effect'>- Vernox pierces you with fear for 1!</p>";
+            var vernoxHeal = Math.round((playersFullHealth / 1) * 0.10);
+            opponent.health = +opponent.health + +vernoxHeal;
+            log.innerHTML += "<p class='effect'>- Vernox rage restores " + vernoxHeal +"HP!</p>";
         }
 
         //Vernox Fight functions
         function attackVernox() {
-            if (playerLevel < 20) {
-                attack();
-                vernoxAbility();
-            }
-            else {
-                log.innerHTML += "<p class='effect'>- Vernox cant be hit if you are over level 20!</p>";
-            }
+            attack();
+            vernoxAbility();
         }
 
         function blockVernox() {
@@ -141,7 +137,7 @@ $userData     = $selectUser->fetch();
             if (opponent.health < 1) {
                 console.log('opponent.died');
                 log.innerHTML += "<p class='victory'>Winner!</p>";
-                div.innerHTML = "<a onclick='claim1();' href='http://fraserprovan.co.uk/projects/warriorRPG/main.php' class='col-md attack-block btn' >Claim Reward</a>";
+                div.innerHTML = "<a onclick='token1(); claim1();' href='http://fraserprovan.co.uk/projects/warriorRPG/main.php' class='col-md attack-block btn' >Claim Reward</a>";
             }
         }
 

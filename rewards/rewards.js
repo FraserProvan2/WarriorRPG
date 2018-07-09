@@ -45,7 +45,17 @@ function claim10() {
     xhr2.send();
     
 }
+
+function token1() {
+
+    // Create the XMLHttpRequest variable.
+    var xhr2 = new XMLHttpRequest();
     
+    xhr2.open('GET', 'rewards/reward_token.php');
+    xhr2.send();
+    
+}
+
 // Gets response from sign up and sends back error (To div)
 function response(e) {
     document.getElementById('claim-response').innerHTML = e.target.responseText;

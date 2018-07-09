@@ -1,6 +1,12 @@
 <?php 
 include 'include/db.php'; 
 include 'include/auth.php'; 
+
+//Gets users information
+$current_user = $_SESSION['gatekeeper'][id];
+$selectUser   = $conn->query("SELECT * FROM users WHERE id=$current_user");
+$userData     = $selectUser->fetch();
+
 ?>
 
 <!doctype html>
@@ -27,7 +33,7 @@ include 'include/auth.php';
         <div class="row">
             
             <!--Play-->
-            <div class="col-md-7 content-box">
+            <div class="col-md-9 content-box">
 
                 <h4 class="sub-heading">Play</h4>
 
@@ -36,7 +42,9 @@ include 'include/auth.php';
                             <thead>
                                 <tr>
                                     <th scope='col' id='table-heading'>Opponent</th>
-                                    <th scope='col' id='table-heading'>Reward (Levels)</th>
+                                    <th scope='col' id='table-heading'>Type</th>
+                                    <th scope='col' id='table-heading'>Reward</th>
+                                    <th scope='col' id='table-heading'>Cost</th>
                                     <th scope='col' id='table-heading'></th>
                                 </tr>
                             </thead>
@@ -45,14 +53,30 @@ include 'include/auth.php';
                             <!--Henchmen-->
                             <tr>
                                 <td>Henchmen</td>
-                                <td>0</td>
+                                <td>Normal</td>
+                                <td></td>
+                                <td></td>
                                 <td><a href="fight_henchmen.php" class="btn fight-btn">Fight</a></td>
                             </tr> 
 
                             <tr>
                                 <td>Vernox</td>
-                                <td>1</td>
+                                <td>Normal</td>
+                                <td>1 level, 1 token</td>
+                                <td></td>
                                 <td><a href="fight_vernox.php" class="btn fight-btn">Fight</a></td>
+                            </tr> 
+
+                            <tr>
+                                <td>Margo</td>
+                                <td>Boss</td>
+                                <td>10 levels</td>
+                                <td>10 tokens</td>
+                                <td> <!--only shows button if tokens is over 10-->
+                                    <?php if ($userData[tokens] >= 10) { ;?> 
+                                        <a href="fight_margo.php" onclick="spendTokens();" class="btn fight-btn">Fight</a>
+                                    <?php } ?> 
+                                </td> 
                             </tr> 
 
                             <!-- To add new opponent
@@ -70,13 +94,6 @@ include 'include/auth.php';
 
             <!--My Stats-->
             <div class="col-md content-box">
-
-                <!--Gets users information-->
-                <?php
-                $current_user = $_SESSION['gatekeeper'][id];
-                $selectUser   = $conn->query("SELECT * FROM users WHERE id=$current_user");
-                $userData     = $selectUser->fetch();
-                ?>
 
                 <!--Username-->
                 <h4 class="sub-heading">
@@ -137,6 +154,12 @@ include 'include/auth.php';
                                 <td class="avaliable-tag"><?php echo $userData[unassigned_xp]; ?> </td>
                                 <td></td>
                             </tr>
+                            <!--Tokens-->
+                            <tr>
+                                <td class="avaliable-tag">Tokens</td>
+                                <td class="avaliable-tag"><?php echo $userData[tokens]; ?> </td>
+                                <td></td>
+                            </tr>
                         </table>
                     </div>
                 </div>
@@ -190,6 +213,15 @@ include 'include/auth.php';
         </div>
 
     </div>
+    
+    <!--tokens spent-->
+    <script>
+    function spendTokens() {
+        var xhr2 = new XMLHttpRequest();
+        xhr2.open('GET', 'rewards/reward_token-spent.php');
+        xhr2.send();
+    }
+    </script>
 
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>

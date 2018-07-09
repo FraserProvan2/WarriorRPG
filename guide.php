@@ -32,6 +32,9 @@ include 'include/auth.php';
 
                 <h4 class="sub-heading">Stats Explained</h4>
 
+                <p class="stat-heading">Tokens</p>
+                <p>Tokens are gained from fighting Normal Warriors. Spend tokens to fight Boss Warriors.</p>
+
                 <p class="stat-heading">Health</p>
                 <p>The level of your Health is the amount of HP your warrior has.</p>
 
@@ -71,8 +74,7 @@ include 'include/auth.php';
                 <h4 class="sub-heading">Opponents Special Abilities</h4>
 
                 <p class="stat-heading">Vernox</p>
-                <p>• Pierces you with fear for 1 damage each turn<br>
-                • Cannot be attacked if you are over level 20</p>
+                <p>Vernox's Rage restores 10% of his health each turn</p>
 
             </div>
 
