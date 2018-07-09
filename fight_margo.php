@@ -102,8 +102,8 @@ $userData     = $selectUser->fetch();
 
         //creates object for margo
         var opponent = new Object();
-        opponent.health = +playerHealth + +playerAttack * 1.5;
-        opponent.attack = (playerAttack / 1) * 0.80;
+        opponent.health = Math.round(+playerHealth + +playerAttack * 1.5);
+        opponent.attack = Math.round((playerAttack / 1) * 0.80);
 
         //logs to confirm margo stats
         console.log("margos health is " + opponent.health);
