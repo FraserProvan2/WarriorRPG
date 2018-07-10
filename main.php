@@ -42,7 +42,7 @@ $userData     = $selectUser->fetch();
                             <thead>
                                 <tr>
                                     <th scope='col' id='table-heading'>Opponent</th>
-                                    <th scope='col' id='table-heading'>Type</th>
+                                    <th scope='col' id='table-heading' class="table-toHide">Type</th>
                                     <th scope='col' id='table-heading'>Reward</th>
                                     <th scope='col' id='table-heading'>Cost</th>
                                     <th scope='col' id='table-heading'></th>
@@ -53,7 +53,7 @@ $userData     = $selectUser->fetch();
                             <!--Henchmen-->
                             <tr>
                                 <td>Henchmen</td>
-                                <td>Normal</td>
+                                <td class="table-toHide">Normal</td>
                                 <td></td>
                                 <td></td>
                                 <td><a href="fight_henchmen.php" class="btn fight-btn">Fight</a></td>
@@ -61,7 +61,7 @@ $userData     = $selectUser->fetch();
 
                             <tr>
                                 <td>Vernox</td>
-                                <td>Normal</td>
+                                <td class="table-toHide">Normal</td>
                                 <td>1 level, 1 token</td>
                                 <td></td>
                                 <td><a href="fight_vernox.php" class="btn fight-btn">Fight</a></td>
@@ -69,7 +69,7 @@ $userData     = $selectUser->fetch();
 
                             <tr>
                                 <td>Margo</td>
-                                <td>Boss</td>
+                                <td class="table-toHide">Boss</td>
                                 <td>10 levels</td>
                                 <td>10 tokens</td>
                                 <td> <!--only shows button if tokens is over 10-->
