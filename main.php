@@ -33,7 +33,7 @@ $userData     = $selectUser->fetch();
         <div class="row">
             
             <!--Play-->
-            <div class="col-md-9 content-box">
+            <div class="col-lg-9 content-box">
 
                 <h4 class="sub-heading">Play</h4>
 

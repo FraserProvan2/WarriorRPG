@@ -103,7 +103,7 @@ $userData     = $selectUser->fetch();
         //creates object for vernox
         var opponent = new Object();
         opponent.health = +playerHealth + +playerAttack;
-        opponent.attack = playerAttack / 2;
+        opponent.attack = playerAttack;
 
         //logs to confirm vernox stats
         console.log("vernoxs health is " + opponent.health);
@@ -119,12 +119,10 @@ $userData     = $selectUser->fetch();
         //Vernox Fight functions
         function attackVernox() {
             attack();
-            vernoxAbility();
         }
 
         function blockVernox() {
             block();
-            vernoxAbility();
         }
 
         //Checks everyones alive

@@ -73,9 +73,6 @@ include 'include/auth.php';
 
                 <h4 class="sub-heading">Opponents Special Abilities</h4>
 
-                <p class="stat-heading">Vernox</p>
-                <p>Vernox's Rage restores 10% of his health each turn</p>
-
             </div>
 
         </div>
