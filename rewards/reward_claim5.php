@@ -3,7 +3,7 @@
 session_start();
 
 //Connets to Database
-$conn = new PDO("mysql:host=localhost;dbname=medotusc_warriorrpg;", "medotusc_fraser", "NHD4?oWU5Bpo");
+$conn = new PDO();
 
 // Selects current users data
 $current_user = $_SESSION['gatekeeper'][id];

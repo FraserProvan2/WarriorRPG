@@ -4,7 +4,7 @@
 session_start();
 
 // Connects to Database
-$conn = new PDO("mysql:host=localhost;dbname=medotusc_warriorrpg;", "medotusc_fraser", "NHD4?oWU5Bpo");
+$conn = new PDO();
 
 // Gets users login info
 $username = htmlentities($_GET["user"]);

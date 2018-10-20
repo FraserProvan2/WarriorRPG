@@ -1,7 +1,7 @@
 <?php
 
 //Connets to Database
-$conn = new PDO("mysql:host=localhost;dbname=medotusc_warriorrpg;", "medotusc_fraser", "NHD4?oWU5Bpo");
+$conn = new PDO();
 
 //gets
 $username  = htmlentities($_GET["username"]);
